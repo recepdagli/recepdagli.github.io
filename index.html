@@ -2,22 +2,7 @@
 <html lang="en">
 <head>
     <style>
-        .button {
-            display: inline-block;
-            padding: 15px 25px;
-            font-size: 24px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #000000;
-            background-color: #fff;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 4px 4px #999;
-            width: 16%;
-            font-family:candara;
-        }
+        
 
         
         
@@ -68,6 +53,62 @@
 </head>
 <body>
     <center>
+        <script>
+            var desk_style = `
+            .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #000000;
+            background-color: #fff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 4px 4px #999;
+            width: 16%;
+            font-family:candara;
+            }
+            `   
+            var mobile_style = `
+            .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #000000;
+            background-color: #fff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 4px 4px #999;
+            width:50%;
+            font-family:candara;
+            display: block;
+            }
+            `   
+            var bdy = document.getElementsByTagName("body");
+            if( screen.width < screen.height ) {     
+                // is mobile.. 
+                var styleSheet = document.createElement("style");
+                styleSheet.type = "text/css";
+                styleSheet.innerText = mobile_style;
+                document.head.appendChild(styleSheet);
+                console.log("a");
+            }
+            else
+            {
+                var styleSheet = document.createElement("style");
+                styleSheet.type = "text/css";
+                styleSheet.innerText = desk_style;
+                document.head.appendChild(styleSheet);
+                console.log("b");
+            }
+        </script>
         <button class="button" onclick="location.href='index.html'" name="home">Home</button>
         <button class="button" onclick="location.href='about.html'" name="about">About Me</button>
         <button class="button" onclick="location.href='projects.html'" name="projects">Projects</button>
